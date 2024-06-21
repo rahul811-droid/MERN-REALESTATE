@@ -26,8 +26,9 @@ app.use(cookieParser());
 app.use(cors());  // Use the cors middleware
 
 app.use(cors({
-    origin: 'https://mern-realestate-nqv3.onrender.com', // Replace with your frontend URL
-    credentials: true // If you need to include credentials (cookies, authorization headers, etc.)
+    origin: [process.env.FRONTEND_URL],
+    method: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true, // If you need to include credentials (cookies, authorization headers, etc.)
 }));
 
 
